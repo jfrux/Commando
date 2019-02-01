@@ -250,7 +250,7 @@ module.exports = Structures.extend('Message', Message => {
 				this.client.emit('commandError', this.command, err, this, args, fromPattern);
 				if(this.channel.typingCount > typingCount) this.channel.stopTyping();
 				if(err instanceof FriendlyError) {
-					return this.reply(err.message);
+					return this.direct(err.message);
 				} else {
 					return this.command.onError(err, this, args, fromPattern);
 				}
