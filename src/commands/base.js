@@ -347,7 +347,7 @@ class Command {
 		}).join(owners.length > 2 ? ', ' : ' ') : '';
 
 		const invite = this.client.options.invite;
-		return message.reply(stripIndents`
+		return message.direct(stripIndents`
 			An error occurred while running the command: \`${err.name}: ${err.message}\`
 			You shouldn't ever receive an error like this.
 			Please contact ${ownerList || 'the bot owner'}${invite ? ` in this server: ${invite}` : '.'}
